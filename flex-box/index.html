@@ -6,14 +6,20 @@
     <title>Flex box</title>
 
     <style>
+      :root {
+        --altura-cabecalho: 80px;
+        --cor-tema-padrao-1: yellow;
+        --cor-tema-secundaria: white;
+      }
+
       * {
         margin: 0;
         padding: 0;
         box-shadow: none;
       }
       body {
-        height: 100vh;
-        background-color: white;
+        height: 80vh;
+        background-color: rgb(218, 213, 213);
       }
       .container {
         display: flex;
@@ -39,15 +45,15 @@
         gap: 50px;
         /* justify-content: center; */
         align-items: center;
-        height: 100vh;
+        height: calc(100vh - var(--altura-cabecalho));
         /* border: 1px solid green; */
       }
       .img-card {
         width: 150px;
       }
-      .header {
-        height: 80px;
-        background-color: blue;
+      header {
+        height: var(--altura-cabecalho);
+        background-color: var(--cor-tema-padrao-1);
       }
       .logo-cabecalho {
         width: 80px;
@@ -60,6 +66,11 @@
         align-items: center;
         padding-left: 30px;
       }
+
+      footer {
+        background-color: var(--cor-tema-secundaria);
+        height: 50px;
+      }
     </style>
   </head>
   <body>
@@ -70,15 +81,15 @@
           alt=""
           class="logo-cabecalho"
         />
-      </div>
 
-      <div>
-        <a href="">Categorias</a>
-        <a href="">Ofertas</a>
-        <a href="">Cupom</a>
-        <a href="">Supermercado</a>
-        <a href="">Moda</a>
-        <a href="">Mercado play</a>
+        <div>
+          <a href="">Categorias</a>
+          <a href="">Ofertas</a>
+          <a href="">Cupom</a>
+          <a href="">Supermercado</a>
+          <a href="">Moda</a>
+          <a href="">Mercado play</a>
+        </div>
       </div>
     </header>
 
@@ -89,6 +100,8 @@
             src="../atividade-css-1/imgselden-ring/Elden-001.jpg"
             alt=""
             class="img-card"
+            width="150px"
+            height="170px"
           />
 
           <p>Elden Ring</p>
@@ -98,6 +111,8 @@
             src="../atividade-css-1/imgselden-ring/Elden-002.jpg"
             alt=""
             class="img-card"
+            width="150px"
+            height="170px"
           />
 
           <p>Elden Ring</p>
@@ -108,6 +123,8 @@
             src="../atividade-css-1/imgselden-ring/Elden-003.jpg"
             alt=""
             class="img-card"
+            width="150px"
+            height="170px"
           />
 
           <p>Elden Ring</p>
@@ -118,6 +135,8 @@
             src="../atividade-css-1/imgselden-ring/elden-1.jpg"
             alt=""
             class="img-card"
+            width="150px"
+            height="170px"
           />
 
           <p>Elden Ring</p>
@@ -130,6 +149,8 @@
             src="../atividade-css-1/imgselden-ring/Elden-003.jpg"
             alt=""
             class="img-card"
+            width="150px"
+            height="170px"
           />
 
           <p>Elden Ring</p>
@@ -139,6 +160,8 @@
             src="../atividade-css-1/imgselden-ring/Elden-003.jpg"
             alt=""
             class="img-card"
+            width="150px"
+            height="170px"
           />
 
           <p>Elden Ring</p>
@@ -148,6 +171,8 @@
             src="../atividade-css-1/imgselden-ring/Elden-003.jpg"
             alt=""
             class="img-card"
+            width="150px"
+            height="170px"
           />
 
           <p>Elden Ring</p>
@@ -157,11 +182,15 @@
             src="../atividade-css-1/imgselden-ring/Elden-003.jpg"
             alt=""
             class="img-card"
+            width="150px"
+            height="170px"
           />
 
           <p>Elden Ring</p>
         </div>
       </div>
     </div>
+
+    <footer></footer>
   </body>
 </html>
