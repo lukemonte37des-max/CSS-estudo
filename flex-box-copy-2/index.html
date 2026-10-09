@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex box - Elden Ring</title>
+
+    <style>
+      /* Reset básico e unificado */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Garante que padding e border não quebrem o tamanho calculado */
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: sans-serif;
+        position: relative; /* Necessário para ancorar o fundo transparente */
+        background-color: rgb(
+          70,
+          70,
+          72
+        ); /* Cor de fundo caso a imagem falhe */
+        overflow-x: hidden;
+      }
+
+      /* Camada da imagem de fundo com transparência */
+      /* Camada da imagem de fundo com transparência */
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        /* COLOQUE O CAMINHO DO SEU ARQUIVO LOCAL AQUI: */
+        background-image: url("../flex-box-copy-2/imgselden-ring/malenia-fundo.jpg");
+
+        background-size: cover; /* Faz a imagem cobrir a tela inteira */
+        background-position: center; /* Centraliza a imagem */
+        background-attachment: fixed; /* Mantém o fundo fixo ao rolar a página */
+        opacity: 0.25; /* Controla a transparência (0.0 a 1.0) */
+        z-index: -1; /* Joga a imagem para trás de todo o conteúdo */
+      }
+
+      header {
+        height: 80px;
+        background-color: blue;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-navegacao {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      .logo-cabecalho {
+        width: 80px;
+        height: auto;
+      }
+
+      .menu-links a {
+        color: white;
+        text-decoration: none;
+        margin-left: 15px;
+        font-weight: bold;
+      }
+
+      .menu-links a:hover {
+        text-decoration: underline;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      /* Um único contêiner inteligente que quebra linhas sozinho */
+      .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 1000px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+      }
+
+      .cards {
+        border: 1px solid orange;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 200px;
+        height: 230px;
+        background-color: #ffffff0e;
+        border-radius: 10px;
+      }
+
+      .img-card {
+        width: 150px;
+        height: 170px;
+        object-fit: cover; /* Evita que a imagem fique distorcida */
+      }
+
+      .cards p {
+        font-weight: bold;
+        color: #333;
+      }
+
+      /* --- Novo estilo para os botões do menu --- */
+      .menu-links {
+        display: flex;
+        gap: 10px; /* Espaçamento padrão entre os botões */
+        align-items: center;
+      }
+
+      /* 1. Botão Padrão (Sem preenchimento / Outline) */
+      .menu-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 16px;
+        border: 2px solid transparent; /* Reserva o espaço da borda */
+        border-radius: 20px; /* Bordas arredondadas estilo pílula */
+        transition: all 0.3s ease; /* Transição suave de cores */
+      }
+
+      /* Efeito ao passar o mouse no botão padrão */
+      .menu-links a:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Fundo sutil */
+        border-color: white; /* Borda branca aparece */
+      }
+
+      /* 2. Botão de Destaque (Preenchido / Contained) */
+      .menu-links a.destaque {
+        background-color: #ff9800; /* Laranja chamativo */
+        color: #1a1a1a;
+        border-color: #ff9800;
+      }
+
+      /* Efeito ao passar o mouse no botão de destaque */
+      .menu-links a.destaque:hover {
+        background-color: #e68a00;
+        border-color: #e68a00;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-navegacao">
+        <img
+          src="../flex-box copy/imgselden-ring/logo-elden-ring.jpg"
+          alt="Logo do jogo Elden Ring"
+          class="logo-cabecalho"
+        />
+
+        <nav class="menu-links">
+          <!-- Botões Padrão (Outline) -->
+          <a href="#">Categorias</a>
+          <a href="#">Ofertas</a>
+          <a href="#">Cupom</a>
+          <a href="#">Supermercado</a>
+          <a href="#">Moda</a>
+
+          <!-- Botão de Destaque (Preenchido / Call to Action) -->
+          <a href="#" class="destaque">Mercado play</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Apenas um container gerencia todos os cards agora -->
+      <div class="container">
+        <div class="cards">
+          <img
+            src="../atividade-css-1/imgselden-ring/Elden-001.jpg"
+            alt="Capa Elden Ring Versão 1"
+            class="img-card"
+          />
+          <p>Elden Ring</p>
+        </div>
+        <div class="cards">
+          <img
+            src="../atividade-css-1/imgselden-ring/Elden-002.jpg"
+            alt="Capa Elden Ring Versão 2"
+            class="img-card"
+          />
+          <p>Elden Ring</p>
+        </div>
+        <div class="cards">
+          <img
+            src="../atividade-css-1/imgselden-ring/Elden-003.jpg"
+            alt="Capa Elden Ring Versão 3"
+            class="img-card"
+          />
+          <p>Elden Ring</p>
+        </div>
+        <div class="cards">
+          <img
+            src="../atividade-css-1/imgselden-ring/Elden-001.jpg"
+            alt="Capa Elden Ring Versão 1"
+            class="img-card"
+          />
+          <p>Elden Ring</p>
+        </div>
+        <div class="cards">
+          <img
+            src="../atividade-css-1/imgselden-ring/Elden-003.jpg"
+            alt="Capa Elden Ring Versão 3"
+            class="img-card"
+          />
+          <p>Elden Ring</p>
+        </div>
+        <div class="cards">
+          <img
+            src="../atividade-css-1/imgselden-ring/Elden-003.jpg"
+            alt="Capa Elden Ring Versão 3"
+            class="img-card"
+          />
+          <p>Elden Ring</p>
+        </div>
+        <div class="cards">
+          <img
+            src="../atividade-css-1/imgselden-ring/Elden-003.jpg"
+            alt="Capa Elden Ring Versão 3"
+            class="img-card"
+          />
+          <p>Elden Ring</p>
+        </div>
+        <div class="cards">
+          <img
+            src="../atividade-css-1/imgselden-ring/Elden-003.jpg"
+            alt="Capa Elden Ring Versão 3"
+            class="img-card"
+          />
+          <p>Elden Ring</p>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
